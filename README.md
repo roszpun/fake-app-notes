@@ -4,7 +4,7 @@
 
 ```sh
 $ git clone https://github.com/roszpun/fake-app-notes.git
-$ cd fake-notes-app
+$ cd fake-app-notes
 $ npm install
 $ npm run production
 ```
