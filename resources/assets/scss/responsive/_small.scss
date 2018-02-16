@@ -1,0 +1,47 @@
+.login-panel__background,
+.login-panel__login-form {
+    width: 100%;
+}
+
+.login-panel__background {
+    min-height: 0;
+    height: 150px;
+    background-position: center top;
+}
+
+body {
+    padding: 30px;
+}
+
+.login-panel {
+    position: static;
+    transform: none;
+}
+
+.right-panel {
+    width: 100%;
+}
+
+.notes-list-panel,
+.left-panel {
+    width: 50%;
+    min-height: 500px;
+}
+
+#notes-app {
+    height: auto;
+    min-height: calc(100vh - 60px);
+}
+
+.not-selected-information h1 {
+    display: none;
+}
+
+.note__content textarea {
+    position: static;
+}
+
+.register-panel {
+    position: static;
+    transform: none;
+}

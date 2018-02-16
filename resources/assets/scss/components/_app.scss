@@ -1,0 +1,257 @@
+#notes-app {
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #fff;
+    @include clearfix;
+    border-radius: 5px;
+    overflow: hidden;
+    height: calc(100vh - 60px);
+}
+
+.notes-list-panel {
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    float: left;
+    width: 25%;
+    height: 100%;
+    position: relative;
+    background: rgb(243, 243, 243);
+    h3 {
+        position: relative;
+        z-index: 1;
+        background: rgb(241, 241, 241);
+        display: block;
+        border-bottom: 1px solid rgb(223, 223, 223);
+        padding: 10px 5px 5px;
+        font-size: 14px;
+        color: rgb(54, 54, 54);
+        font-weight: 100;
+    }
+}
+
+.left-panel {
+    float: left;
+    width: 20%;
+    background: rgb(250, 245, 245);
+    padding: 10px;
+    height: 100%;
+    h2 {
+        font-weight: 100;
+        z-index: 1;
+        text-align: center;
+        font-size: 36px;
+        color: rgb(54, 125, 206);
+    }
+}
+
+.notes-list {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 25px);
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    li {
+        &:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            padding-bottom: 1px;
+            width: 3px;
+            background: $blue-p1;
+            z-index: 1;
+        }
+        &:nth-child(even) {
+            &:before {
+                background: $blue;
+            }
+        }
+        border-bottom: 1px solid rgb(233, 233, 233);
+        height: 75px;
+        position: relative;
+        background: rgb(246, 250, 252);
+        padding: 10px;
+        cursor: pointer;
+        @include transition-all;
+        &:hover {
+            background: rgb(219, 231, 238);
+        }
+        &.is--active {
+            background: #fff !important;
+            &:before {
+                width: 6px;
+            }
+        }
+    }
+    strong {
+        display: block;
+        width: 100%;
+        font-weight: 300;
+        margin-bottom: 5px;
+    }
+    p {
+        font-size: 14px;
+        color: rgb(119, 119, 119);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 260px;
+        width: 100%;
+        max-height: 1.2em;
+        display: block;
+    }
+    time {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 8px;
+        color: rgb(179, 179, 179);
+    }
+}
+
+.actions {
+    width: 100%;
+    text-align: center;
+    ul {
+        text-align: left;
+        margin-top: 10px;
+    }
+    li a {
+        text-decoration: none;
+        color: $gray;
+        padding: 8px 40px;
+        display: inline-block;
+        width: 100%;
+    }
+    li {
+        @include transition-all;
+        border-radius: 2px;
+        margin: 10px 0;
+        &:hover {
+            i {
+                color: $blue;
+            }
+            background: rgb(248, 248, 248);
+        }
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            height: 1px;
+            width: 100%;
+            background: rgb(223, 223, 223);
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+        i {
+            @include transition-all;
+            position: absolute;
+            left: 10px;
+            @include center(false, true);
+        }
+    }
+}
+
+.create-button {
+    margin-top: 15px;
+    background: $blue;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    &:hover {
+        color: #fff;
+        background: $blue-p1;
+    }
+}
+
+.right-panel {
+    float: left;
+    width: 55%;
+    height: 100%;
+    position: relative;
+    background: rgb(247, 247, 247);
+}
+
+.note {
+    position: relative;
+    background: #fff;
+    margin: 15px;
+    border-radius: 5px;
+    height: calc(100% - 30px);
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.note__heading {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    .title {
+        padding: 15px;
+        input {
+            padding: 10px;
+            width: 85%;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            background: transparent;
+            &:focus {
+                border: 1px solid rgb(209, 209, 209);
+                background: #fff;
+                cursor: text;
+            }
+        }
+    }
+    .actions {
+        position: absolute;
+        right: 15px;
+        top: 33px;
+        width: 100px;
+        text-align: right;
+        margin-top: -5px;
+        a {
+            padding: 5px;
+            color: rgb(209, 209, 209);
+            @include transition-all;
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+}
+
+.note__content {
+    textarea {
+        position: absolute;
+        height: calc(100% - 71px);
+        border: none;
+        background: #fff;
+        &:focus {
+            background: #fff;
+        }
+    }
+}
+
+.not-selected-information {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    h1 {
+        @include center(true, true);
+        text-align: center;
+        font-weight: 100;
+        color: rgb(209, 209, 209);
+    }
+}

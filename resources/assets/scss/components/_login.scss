@@ -1,0 +1,71 @@
+.login-panel {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    @include center(true, true);
+    @include clearfix;
+    box-shadow: rgba(14, 19, 36, 0.1) 0 0 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    border-bottom-left-radius: 35px;
+}
+
+.login-panel__background {
+    position: relative;
+    background-size: cover;
+    background-position: -120px 45px;
+    min-height: 500px;
+    width: 40%;
+    float: left;
+    h1 {
+        font-weight: 100;
+        @include center(true, true);
+        color: #fff;
+        z-index: 1;
+        text-align: center;
+        font-size: 76px;
+        color: rgb(54, 125, 206);
+    }
+    &:after {
+        background: rgb(211, 211, 211);
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
+}
+
+.login-panel__login-form {
+    float: left;
+    width: 60%;
+    padding: 30px 35px;
+    h2 {
+        color: $blue;
+        font-weight: 300;
+        text-align: center;
+        padding: 30px 0;
+    }
+}
+
+.login-panel__login-with-social-media {
+    width: 100%;
+    text-align: center;
+    .media-login {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        background-size: cover;
+        opacity: 0.5;
+        margin: 0 10px;
+        border: 1px solid #f7f7f7;
+        @include transition-all;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

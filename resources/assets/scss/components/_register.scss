@@ -1,0 +1,38 @@
+.register-panel {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    @include center(true, true);
+    padding: 15px;
+}
+
+.register-panel__register-form {
+    padding: 30px 35px;
+    h2 {
+        color: $blue;
+        font-weight: 300;
+        text-align: center;
+        padding: 30px 0;
+    }
+}
+
+.register-panel__register-with-social-media {
+    width: 100%;
+    text-align: center;
+    .media-register {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        background-size: cover;
+        opacity: 0.5;
+        margin: 0 10px;
+        border: 1px solid #f7f7f7;
+        @include transition-all;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

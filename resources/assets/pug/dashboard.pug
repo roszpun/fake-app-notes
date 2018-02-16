@@ -1,0 +1,47 @@
+extends template.pug
+block title 
+    |Notes app
+block content
+    #notes-app
+        .left-panel
+            .logo-container
+                h2 Notes!
+            .actions
+                button.create-button(onclick="create_note()") Create new note +
+                ul
+                    li
+                        i.fa.fa-user
+                        a(href="#") Profile
+                    li
+                        i.fa.fa-calendar
+                        a(href="#") Calendar
+                    li
+                        i.fa.fa-gear
+                        a(href="#") Settings
+                    li
+                        i.fa.fa-trash
+                        a(href="#") Deleted
+        .notes-list-panel
+            h3 Your notes
+            ul.notes-list
+                each val in [1]
+                    li(data-note-ref=val)
+                        strong My note
+                        time 12:12:12 15:32
+                        p My first note created with this awesome fake ui
+        .right-panel
+            .not-selected-information
+                h1 Please select the note or create a new one 
+            .note
+                .note__heading
+                    .title
+                        input(type="text" value="" placeholder="Note title")
+                    .actions
+                        a.delete-note(href="#")
+                            i.fa.fa-trash
+                        a(href="#")
+                            i.fa.fa-share
+                .note__content
+                    textarea(name="", cols="30", rows="10" placeholder="Note contents")
+                        |My first note created with this awesome fake ui
+

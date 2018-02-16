@@ -1,0 +1,26 @@
+extends template.pug
+block title 
+    |Login to Notes! 
+block content
+    .login-page
+        .login-panel
+            .login-panel__background(style="background-image: url(http://www.hermanmiller.com/content/dam/hermanmiller/microsites/neocon-2013/images/wallpaper-B-2560x1440.png)")
+                h1
+                    |Notes!
+                
+            .login-panel__login-form
+                h2
+                    |Login to Notes!
+                form(action="dashboard.html" method="post")
+                    .input-group.validate 
+                        input(type="text" placeholder="Username" data-correct-value="admin")
+                    .input-group.validate 
+                        input(type="password" placeholder="Password" data-correct-value="admin")
+                    .button-group.validate 
+                        button(type="submit") Sing in
+                    .errors
+                        |Sorry, credentials do not match
+                .separator Or use Google or Facebook account
+                .login-panel__login-with-social-media
+                    .media-login.google(style="background-image:url(https://idge.staticworld.net/images/gplus.svg)") 
+                    .media-login.facebook(style="background-image:url(https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png)")
